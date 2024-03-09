@@ -57,6 +57,27 @@ function setDateData() {
   yearEl.textContent = year;
 }
 
+function getClockData() {
+  const today = new Date();
+  const hour = today.getHours();
+  const minute = today.getMinutes();
+  const second = today.getSeconds();
+  return {
+    hour,
+    minute,
+    second,
+  };
+}
+
+function setClockData() {
+  const { hour, minute, second } = getClockData();
+  hourEl.textContent = hour <= 9 ? "0" + hour : hour;
+  minuteEl.textContent = minute <= 9 ? "0" + minute : minute;
+  secondEl.textContent = second <= 9 ? "0" + second : second;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   setDateData();
+  setClockData();
+  setInterval(setClockData, 1000);
 });
