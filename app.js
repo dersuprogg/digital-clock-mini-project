@@ -12,34 +12,34 @@ const monthEl = document.querySelector(".month");
 const yearEl = document.querySelector(".year");
 
 const weekdays = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
+  "Yakshanba",
+  "Dushanba",
+  "Seshanba",
+  "Chorshanba",
+  "Payshanba",
+  "Juma",
+  "Shanba",
 ];
 
 const months = [
-  "January",
-  "February",
-  "March",
-  "April",
+  "Yanvar",
+  "Fevral",
+  "Mart",
+  "Aprel",
   "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
+  "Iyun",
+  "Iyul",
+  "Avgust",
+  "Sentyabr",
+  "Oktyabr",
+  "Noyabr",
 ];
 
 function getDateData() {
   const today = new Date();
   const day = weekdays[today.getDay()];
   const date = today.getDate();
-  const month = months[today.getMonth()];
+  const month = months[today.getMonth()].toLowerCase();
   const year = today.getFullYear();
   return {
     day,
@@ -51,7 +51,7 @@ function getDateData() {
 
 function setDateData() {
   const { day, date, month, year } = getDateData();
-  dayEl.textContent = day.slice(0, 3);
+  dayEl.textContent = day;
   dateEl.textContent = date;
   monthEl.textContent = month;
   yearEl.textContent = year;
