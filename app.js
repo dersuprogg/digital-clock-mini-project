@@ -35,6 +35,10 @@ const months = [
   "Noyabr",
 ];
 
+function setTextContent(el, text) {
+  el.textContent = text;
+}
+
 function getDateData() {
   const today = new Date();
   const day = weekdays[today.getDay()];
