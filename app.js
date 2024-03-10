@@ -55,10 +55,10 @@ function getDateData() {
 
 function setDateData() {
   const { day, date, month, year } = getDateData();
-  dayEl.textContent = day;
-  dateEl.textContent = date;
-  monthEl.textContent = month;
-  yearEl.textContent = year;
+  setTextContent(dayEl, day);
+  setTextContent(dateEl, date);
+  setTextContent(monthEl, month);
+  setTextContent(yearEl, year);
 }
 
 function getClockData() {
